@@ -1,0 +1,12 @@
+Private Sub Workbook_Open()
+    Worksheets("Suivi mensuel").Range("insertDate").Value = Date
+    Worksheets("Suivi mensuel").Range("C8").Columns.AutoFit
+    Range("W8").EntireColumn.Insert
+    Range("V8:V177").Select
+    Selection.Copy
+    Range("V8:V177, W8:W177").Select ' note that we select the whole merged cell
+    Selection.PasteSpecial Paste:=xlPasteFormats
+    Worksheets("Suivi mensuel").Range("W8").Value = Date
+    Worksheets("Suivi mensuel").Range("W9").Value = WeekdayName(Weekday(Now(), vbUseSystemDayOfWeek))
+    Application.CutCopyMode = False
+End Sub
