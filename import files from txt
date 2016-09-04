@@ -1,0 +1,82 @@
+Sub Macro5()
+'
+' Macro4 Macro
+' macro2+macro3 test
+'
+
+'
+DesktopAddress = CreateObject("WScript.Shell").SpecialFolders("Desktop") & Application.PathSeparator _
+    & "- Rapport quotidien pour lx0009..txt"
+
+    Sheets.Add After:=Sheets(Sheets.Count)
+    With ActiveSheet.QueryTables.Add(Connection:="TEXT;" & DesktopAddress, Destination:=Range("$A$1"))
+        '.Name = "- Rapport quotidien pour lx0009.."
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .TextFilePromptOnRefresh = False
+        .TextFilePlatform = 1252
+        .TextFileStartRow = 1
+        .TextFileParseType = xlDelimited
+        .TextFileTextQualifier = xlTextQualifierDoubleQuote
+        .TextFileConsecutiveDelimiter = True
+        .TextFileTabDelimiter = False
+        .TextFileSemicolonDelimiter = False
+        .TextFileCommaDelimiter = False
+        .TextFileSpaceDelimiter = True
+        .TextFileColumnDataTypes = Array(1, 1, 1, 1, 1)
+        .TextFileTrailingMinusNumbers = True
+        .Refresh BackgroundQuery:=False
+    End With
+    Range("H9").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("I179").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("H12").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("D179").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("F12").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("E179").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("F13").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("F179").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("F15").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("H179").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("E17").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("G179").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+End Sub
+
+
