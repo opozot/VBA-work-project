@@ -1,0 +1,84 @@
+Sub Macro4()
+'The same for a different file
+' Macro4 Macro
+' macro2+macro3 test
+DesktopAddress = CreateObject("WScript.Shell").SpecialFolders("Desktop") & Application.PathSeparator _
+    & "- Rapport quotidien pour dmblx200.res.jcdecaux.org..txt"
+    
+'With ActiveSheet.QueryTables.Add(Connection:="TEXT;" & DesktopAddress, Destination:=Range("$A$1"))
+    
+'With ActiveSheet.QueryTables.Add(Connection:= _
+        "TEXT;C:\Users\ASUS\Desktop\- Rapport quotidien pour dmblx200.res.jcdecaux.org..txt" _
+        , Destination:=Range("$A$1"))
+
+
+    Sheets.Add After:=Sheets(Sheets.Count)
+    With ActiveSheet.QueryTables.Add(Connection:="TEXT;" & DesktopAddress, Destination:=Range("$A$1"))
+        '.Name = "- Rapport quotidien pour dmblx200.res.jcdecaux.org."
+        .FieldNames = True
+        .RowNumbers = False
+        .FillAdjacentFormulas = False
+        .PreserveFormatting = True
+        .RefreshOnFileOpen = False
+        .RefreshStyle = xlInsertDeleteCells
+        .SavePassword = False
+        .SaveData = True
+        .AdjustColumnWidth = True
+        .RefreshPeriod = 0
+        .TextFilePromptOnRefresh = False
+        .TextFilePlatform = 1252
+        .TextFileStartRow = 1
+        .TextFileParseType = xlDelimited
+        .TextFileTextQualifier = xlTextQualifierDoubleQuote
+        .TextFileConsecutiveDelimiter = True
+        .TextFileTabDelimiter = False
+        .TextFileSemicolonDelimiter = False
+        .TextFileCommaDelimiter = False
+        .TextFileSpaceDelimiter = True
+        .TextFileColumnDataTypes = Array(1, 1, 1, 1, 1)
+        .TextFileTrailingMinusNumbers = True
+        .Refresh BackgroundQuery:=False
+    End With
+    Range("H9").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("I178").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("H12").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("D178").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("F12").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("E178").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("F13").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("F178").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("F15").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("H178").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+    Sheets(Sheets.Count).Select
+    Range("E17").Select
+    Selection.Copy
+    Sheets("Rapport du jour").Select
+    Range("G178").Select
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+End Sub
