@@ -3,18 +3,18 @@ Sub Macro4()
 ' Macro4 Macro
 ' macro2+macro3 test
 DesktopAddress = CreateObject("WScript.Shell").SpecialFolders("Desktop") & Application.PathSeparator _
-    & "- Rapport quotidien pour dmblx200.res.jcdecaux.org..txt"
+    & "- Rapport quotidien pour XXXXXXX..txt"
     
 'With ActiveSheet.QueryTables.Add(Connection:="TEXT;" & DesktopAddress, Destination:=Range("$A$1"))
     
 'With ActiveSheet.QueryTables.Add(Connection:= _
-        "TEXT;C:\Users\ASUS\Desktop\- Rapport quotidien pour dmblx200.res.jcdecaux.org..txt" _
+        "TEXT;C:\Users\ASUS\Desktop\- Rapport quotidien pour XXX..txt" _
         , Destination:=Range("$A$1"))
 
 
     Sheets.Add After:=Sheets(Sheets.Count)
     With ActiveSheet.QueryTables.Add(Connection:="TEXT;" & DesktopAddress, Destination:=Range("$A$1"))
-        '.Name = "- Rapport quotidien pour dmblx200.res.jcdecaux.org."
+        '.Name = "- Rapport quotidien pour XXX."
         .FieldNames = True
         .RowNumbers = False
         .FillAdjacentFormulas = False
