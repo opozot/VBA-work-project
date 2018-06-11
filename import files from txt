@@ -6,11 +6,11 @@ Sub Macro5()
 
 '
 DesktopAddress = CreateObject("WScript.Shell").SpecialFolders("Desktop") & Application.PathSeparator _
-    & "- Rapport quotidien pour lx0009..txt"
+    & "- Rapport quotidien pour xxx..txt"
 
     Sheets.Add After:=Sheets(Sheets.Count)
     With ActiveSheet.QueryTables.Add(Connection:="TEXT;" & DesktopAddress, Destination:=Range("$A$1"))
-        '.Name = "- Rapport quotidien pour lx0009.."
+        '.Name = "- Rapport quotidien pour xxxx.."
         .FieldNames = True
         .RowNumbers = False
         .FillAdjacentFormulas = False
